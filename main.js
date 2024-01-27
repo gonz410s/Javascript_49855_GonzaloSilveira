@@ -145,6 +145,8 @@ function juegoColores() {
 
 
 function tiendaRemeras() { 
+    
+    
 
     const Remera = function (identificador,nombre,talle,stock){
         this.identificador = identificador;
@@ -170,12 +172,30 @@ function tiendaRemeras() {
     let remera16= new Remera(4,"baywatch", "xl", 0)
     let listaRemeras = [remera1, remera2, remera3,remera4,remera5,remera6, remera7, remera8,remera9,remera10,remera11,remera12,remera13,remera14,remera15,remera16]
     
+    
     function mostrarTalles(){
+        const pedido = function (nombre,talle,fecha){
+            this.nombre = nombre
+            this.talle = talle
+            this.fecha = new Date
+        }
         let miEleccion = parseInt(elegirRemeras)
         let resultadoItem = listaRemeras.filter((x)=>x.identificador === miEleccion)
-        if(resultadoItem.length >0){
+        if(resultadoItem.length >0 && resultadoItem.length<=4){
+            alert("Checkea por consola los resultados")
             console.table(resultadoItem)
+            let hacerPedido = confirm("Te gustaria hacer tu pedido en caso de que encontraras lo que buscabas?")
+            if (hacerPedido){
+                let nuevoPedido = new pedido(prompt("Ingresa el nombre del item: ").toLowerCase(),prompt("Ingresa el talle: ").toLowerCase())
+                console.table(nuevoPedido)
+                alert("Recibimos tu pedido!, muchas gracias")
+                mostrarOpciones();
+            }else{ alert("Nos volvemos al menu principal")
+            mostrarOpciones();
+    
+            }
         }
+
     }
     
     
@@ -207,5 +227,6 @@ function tiendaRemeras() {
             tiendaRemeras();
     }   
 
+    
 
 } 
