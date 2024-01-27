@@ -1,5 +1,5 @@
 function mostrarOpciones() {
-    let opciones1 = "\n1. Ingresa tus datos personales\n2. Contame un poco de vos\n3. Jugamos una adivinanza?\n4. Juego de Colores\n5. Salir";
+    let opciones1 = "\n1. Ingresa tus datos personales\n2. Contame un poco de vos\n3. Jugamos una adivinanza?\n4. Juego de Colores\n5. Tienda de Remeras\n6. Salir";
     let elegir = prompt(opciones1);
 
     switch (elegir) {
@@ -16,6 +16,9 @@ function mostrarOpciones() {
             juegoColores();
             break;
         case "5":
+            tiendaRemeras();
+            break;
+        case "6":
             alert("Saliendo del simulador de datos.");
             break;
         default:
@@ -136,3 +139,73 @@ function juegoColores() {
         }
     }
 }
+
+
+
+
+
+function tiendaRemeras() { 
+
+    const Remera = function (identificador,nombre,talle,stock){
+        this.identificador = identificador;
+        this.nombre = nombre;
+        this.talle = talle;
+        this.stock = stock;
+    }
+    let remera1= new Remera(1,"hello kitty", "s", 5)
+    let remera2= new Remera(1,"hello kitty", "m", 3)
+    let remera3= new Remera(1,"hello kitty", "l", 0)
+    let remera4= new Remera(1,"hello kitty", "xl", 10)
+    let remera5= new Remera(2,"batman", "s", 9)
+    let remera6= new Remera(2,"batman", "m", 3)
+    let remera7= new Remera(2,"batman", "l", 6)
+    let remera8= new Remera(2,"batman", "xl", 2)
+    let remera9= new Remera(3,"zelda", "s", 7)
+    let remera10= new Remera(3,"zelda", "m", 1)
+    let remera11= new Remera(3,"zelda", "xl", 0)
+    let remera12= new Remera(3,"zelda", "l", 8)
+    let remera13= new Remera(4,"baywatch", "s", 8)
+    let remera14= new Remera(4,"baywatch", "m", 4)
+    let remera15= new Remera(4,"baywatch", "l", 3)
+    let remera16= new Remera(4,"baywatch", "xl", 0)
+    let listaRemeras = [remera1, remera2, remera3,remera4,remera5,remera6, remera7, remera8,remera9,remera10,remera11,remera12,remera13,remera14,remera15,remera16]
+    
+    function mostrarTalles(){
+        let miEleccion = parseInt(elegirRemeras)
+        let resultadoItem = listaRemeras.filter((x)=>x.identificador === miEleccion)
+        if(resultadoItem.length >0){
+            console.table(resultadoItem)
+        }
+    }
+    
+    
+    alert("A continuacion veras lo que nos esta quedando en nuestra tiendita, elegi el producto para ver las existencias de talle")
+    let listadoRemeras = "\n1. Hello Kitty\n2. Batman \n3. Zelda\n4. Baywatch\n5. Salir";
+    let elegirRemeras = prompt(listadoRemeras).trim();
+    
+    switch (elegirRemeras) {
+        case "1":
+            mostrarTalles();
+            break;
+        case "2":
+            mostrarTalles();
+            break;
+        case "3":
+            mostrarTalles();
+            break;
+        case "4":
+            mostrarTalles();
+            break;
+        case "5":
+            mostrarTalles();
+            break;
+        case "6":
+            alert("Saliendo del simulador de datos.");
+            break;
+        default:
+            alert("Opcion invalida, por favor intenta denuevo");
+            tiendaRemeras();
+    }   
+
+
+} 
