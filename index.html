@@ -6,6 +6,40 @@
     <title>FORMULARIO DE INGRESO DE DATOS</title>
 </head>
 <body>
+    <h1>Este es un Formulario de contacto</h1>
+    <form id="formularioContacto">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="off" required><br><br>
+
+        <label for="telefono">Telefono de contacto:</label>
+        <input type="text" id="telefono" name="telefono" required><br><br>
+
+        <label for="direccion">Direccion:</label>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+    
+        <label for="mensaje">Contanos un poco de vos</label><br>
+        <textarea id="mensaje" name="mensaje" rows="10" cols="50" required></textarea><br><br>
+    
+        <button id="botonEnviar" type="submit">Enviar</button>
+    </form>
+
+    <h2>Recuperar Contacto por Nombre</h2>
+<form id="recuperarContactoForm">
+    <label for="nombreBuscar">Buscar por Nombre:</label>
+    <input type="text" id="nombreBuscar" name="nombreBuscar" required><br><br>
+    <button type="submit">Buscar</button>
+</form>
+<br>
+<textarea id="resultadoContacto" rows="10" cols="50" readonly></textarea>
+
+<h3>Mostrar Contactos</h3>
+<button id="mostrarContactos">Mostrar Todos los Contactos</button>
+<br><br>
+<textarea id="listaContactos" rows="10" cols="50" readonly></textarea>
+
     <script src="./main.js"></script>
 </body>
 </html>
